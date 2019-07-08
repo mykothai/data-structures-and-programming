@@ -1,5 +1,5 @@
 /*
-**  Assignment 4, CMPT-225, December 3, 2018
+**  Assignment, CMPT-225
 **
 **  This program reads a sequence of integers from a text file,
 **  separates the integers into two lists, L1 and L2 for which
@@ -9,10 +9,10 @@
 */
 
 Files included in the zip file: 
- - a4.cpp
+ - listDifference.cpp
  - Makefile
  - priority_queue.h
- - a4.readme
+ - listDifference.readme
 
 External code used (code which is not my own):
  - std::priority_queue
@@ -27,11 +27,10 @@ External code used (code which is not my own):
 		top()				//gets the first/next element in the priority_queue
 
 How my program works:
- - when running a4.o, console will ask for a file name in the format of "filename.txt"
+ - when running listDifference.o, console will ask for a file name in the format of "filename.txt"
  - opens the text file inputed by user
  - creates two priority queues q1 and q2 given
  - q1 and q2 are automatically sorted by the given C++ STL priority queue class
- - prints my student number, sfu id and name
  - while q1 is not empty, do the following: (else skip the while loop, output NONE and end program)
  - sets a max of each list to their top elements maxL1 (for q1) and maxL2 (for q2)
  - compares the max of q1 to the max of q2
