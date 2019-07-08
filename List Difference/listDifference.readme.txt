@@ -1,0 +1,44 @@
+/*
+**  Assignment 4, CMPT-225, December 3, 2018
+**
+**  This program reads a sequence of integers from a text file,
+**  separates the integers into two lists, L1 and L2 for which
+**  a 0 delimits the lists and outputs the largest number that
+**  occurs in L1 but does not occur in L2, or "NONE" if there 
+**  is no such number.
+*/
+
+Files included in the zip file: 
+ - a4.cpp
+ - Makefile
+ - priority_queue.h
+ - a4.readme
+
+External code used (code which is not my own):
+ - std::priority_queue
+ - used the header definition found at the link below
+   https://en.cppreference.com/w/cpp/container/priority_queue
+ - I created a separate header file for this code. It is contained in "priority_queue.h"
+ - Member functions used:
+		priority_queue<int> 		//creates priority_queue
+		push()				//pushes int to priority_queue
+		pop()				//pops int from priority_queue
+		empty()				//checks if priority_queue is empty
+		top()				//gets the first/next element in the priority_queue
+
+How my program works:
+ - when running a4.o, console will ask for a file name in the format of "filename.txt"
+ - opens the text file inputed by user
+ - creates two priority queues q1 and q2 given
+ - q1 and q2 are automatically sorted by the given C++ STL priority queue class
+ - prints my student number, sfu id and name
+ - while q1 is not empty, do the following: (else skip the while loop, output NONE and end program)
+ - sets a max of each list to their top elements maxL1 (for q1) and maxL2 (for q2)
+ - compares the max of q1 to the max of q2
+ - if maxL1 < maxL2 pop from q2 until q2 is empty (output maxL1) or maxL1 is no longer less than maxL2
+ - when maxL1 == maxL2, pop each element to check the next largest number
+   while popping, if q1 becomes empty (output NONE) or if q2 becomes empty (output maxL1)
+ - if Q1 has duplicates, this is handled by the variable temp which checks that if, after popping from
+   q1, q1's next number = temp then it is a duplicate and will be popped.
+   if this causes q1 to be empty (output NONE)
+ - if at any time maxL1 > maxL2, then (output maxL1)
